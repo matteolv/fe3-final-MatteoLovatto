@@ -1,10 +1,10 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import { reducer } from "../../Reducer/reducer";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+
 
  const initialState = {
-  theme: 'light',
+  theme: "light",
   list:[],
   favs: JSON.parse(localStorage.getItem('favs')) || [],
 }
@@ -14,7 +14,6 @@ import { useParams } from "react-router-dom";
  const ContextProvider = ({ children }) => {
   
   const [state, dispatch] = useReducer(reducer, initialState)
-  const {theme, list, favs} = state
   
   const url = 'https://jsonplaceholder.typicode.com/users'
 
@@ -24,15 +23,13 @@ import { useParams } from "react-router-dom";
   },[])
 
   useEffect(() =>{
-    localStorage.setItem('favs', JSON.stringify(favs))
-  },[favs])
+    localStorage.setItem('favs', JSON.stringify(state.favs))
+  },[state.favs])
 
-  const cambiarTema = () =>{
-    dispatch({type: 'CHANGE_THEME'})
-  }
+
 
   return (
-    <ContextGlobal.Provider value={{theme,list,favs,dispatch, cambiarTema}}>
+    <ContextGlobal.Provider value={{ state ,dispatch }}>
       {children}
     </ContextGlobal.Provider>
   );

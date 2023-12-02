@@ -6,13 +6,13 @@ import { useContextGlobal } from '../Components/utils/global.context'
 
 const Home = () => {
 
-  const {list} = useContextGlobal()
+  const {state} = useContextGlobal()
 
   return (
     <main className="home">
       <h1>Home</h1>
       <div className='card-grid'>
-        {list.map(dentistas => <Card dentistas={dentistas} key= {dentistas.id} />)}
+        {state.list.map(dentistas => <Card dentistas={dentistas} key= {dentistas.id} />)}
       </div>
     </main>
   )

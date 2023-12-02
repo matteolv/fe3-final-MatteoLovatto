@@ -1,13 +1,5 @@
 
-nav{
-    display: flex;
-    width: auto;
-    justify-content: space-between;
-    padding: 1rem;
-    align-items: center;
-    background-color: rgb(216, 216, 216);
-  }
-  
+
   nav h3{
     margin-left: 4.5rem;
   }

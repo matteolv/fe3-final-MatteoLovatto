@@ -12,8 +12,11 @@ import { useContextGlobal } from "./Components/utils/global.context";
 //Hola profe, luche como loco para hacer que el footer quede en el fondo de la pagina pero no hubo caso 😅.
 //Si en el feedback me puede decir como arreglarlo se lo agradeceria muchisimo
 function App() {
+
+  const {state} = useContextGlobal()
+
   return (
-      <div className="App">
+      <div className={`App ${state.theme}`}>
           <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>

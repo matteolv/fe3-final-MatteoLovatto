@@ -5,17 +5,23 @@ import { useContextGlobal } from "./utils/global.context";
 
 const Card = ({ dentistas }) => {
 
-  const {favs, dispatch} = useContextGlobal()
-  const findFav = favs.find((fav) => fav.id === dentistas.id)
+  const {state, dispatch} = useContextGlobal()
+  const findFav = state.favs.find((fav) => fav.id === dentistas.id)
+  
   const addFav = () => {
-    if(findFav){
-      dispatch({type: 'DELETE_FAV', payload: dentistas.id})
+    const favFilter = state.favs.find(card => card.id === dentistas.id);
+
+    if (!favFilter) {
+      dispatch({ type: 'ADD_FAV', payload: { ...dentistas } });
+      alert('La tarjeta se agregó correctamente a tus favoritos!');
+    } else {
+      dispatch({ type: 'DELETE_FAV', payload: { ...dentistas } });
+      alert('La tarjeta se ha eliminado correctamente de tus favoritos!');
     }
-    dispatch({type: 'ADD_FAV', payload: dentistas})
   }
 
   return (
-    <div className="card">
+    <div className={`card ${state.theme}`}>
         <Link to={'Detail/' + dentistas.id} >
         <img src="images/doctor.jpg" alt="doctores" />
         <h4>{dentistas.name} </h4>

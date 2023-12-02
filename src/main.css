@@ -9,6 +9,10 @@ html, body, #root {
 
 }
 
+#body {
+  color: black;
+
+}
 .App , #root {
   box-sizing: border-box;
   
@@ -26,14 +30,17 @@ code {
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
+  margin-bottom: 5px;
   border: none;
   width: 100%;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 h1{
   text-align: center;
 }
+
 
 
 a{
@@ -46,8 +53,26 @@ a:hover{
   color: rgb(136, 136, 136);
 } 
 
+.nav{
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  background-color: rgb(216, 216, 216);
+}
 
 
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  height: 40px;
+  margin-top: 2rem;
+  background-color: rgb(216, 216, 216) ;
+}
 
 
 .card{
@@ -97,20 +122,10 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.light {
-  background-color: white;
-  color: black;
-}
-
-.light > a {
-  color: black;
-}
-
 .dark{
-  background-color: #12121296;
+  background-color: #0b0b0b96;
   color: white;
 }
 .dark > a {
   color: white;
 }
-
