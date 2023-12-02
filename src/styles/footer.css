@@ -1,0 +1,32 @@
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    position: relative;
+    bottom: 0;
+    height: 40px;
+    margin-top: 2rem;
+    background-color: rgb(216, 216, 216) ;
+  }
+  
+  footer > img{
+    width: 200px;
+    margin: 0;
+  }
+  
+  .logo {
+    display: flex;
+  }
+  
+  .redes {
+    display: flex;
+  }
+  
+  .redes > img{
+    margin-left: 1rem;
+  }
+  
+  footer > p{
+    margin: 0;
+    padding-top: 0.7rem;
+  }
